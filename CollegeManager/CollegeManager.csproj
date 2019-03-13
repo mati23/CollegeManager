@@ -134,7 +134,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CollegesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,68 +149,17 @@
       <DependentUpon>CollegeModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CollegeModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CollegeModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\CollegeModel.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>CollegeModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Student.cs">
-      <DependentUpon>StudentsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentsSubjectsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsSubjectsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentsSubjectsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsSubjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentsSubjectsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsSubjectsModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StudentSubject.cs">
-      <DependentUpon>StudentsSubjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Subject.cs">
-      <DependentUpon>SubjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SubjectsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SubjectsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SubjectsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SubjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SubjectsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SubjectsModel.edmx</DependentUpon>
+    <Compile Include="Models\Teacher.cs">
+      <DependentUpon>TeacherModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TeacherModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -225,12 +176,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeacherModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Teachers.cs">
-      <DependentUpon>TeacherModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJsApp\Teacher\Controller.js" />
+    <Content Include="AngularJsApp\Teacher\Model.js" />
+    <Content Include="AngularJsApp\Teacher\Service.js" />
     <Content Include="App_Data\college_database.mdf" />
     <Content Include="App_Data\college_database_log.ldf">
       <DependentUpon>college_database.mdf</DependentUpon>
@@ -245,43 +196,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\CollegeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CollegeModel.edmx</DependentUpon>
       <LastGenOutput>CollegeModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CollegeModel.edmx.diagram">
       <DependentUpon>CollegeModel.edmx</DependentUpon>
     </Content>
     <Content Include="Models\CollegeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CollegeModel.edmx</DependentUpon>
       <LastGenOutput>CollegeModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\StudentsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentsModel.edmx</DependentUpon>
-      <LastGenOutput>StudentsModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\StudentsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentsModel.edmx</DependentUpon>
-      <LastGenOutput>StudentsModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\StudentsSubjectsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentsSubjectsModel.edmx</DependentUpon>
-      <LastGenOutput>StudentsSubjectsModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\StudentsSubjectsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentsSubjectsModel.edmx</DependentUpon>
-      <LastGenOutput>StudentsSubjectsModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\SubjectsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SubjectsModel.edmx</DependentUpon>
-      <LastGenOutput>SubjectsModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\SubjectsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SubjectsModel.edmx</DependentUpon>
-      <LastGenOutput>SubjectsModel.cs</LastGenOutput>
+      <DependentUpon>CollegeModel.edmx</DependentUpon>
     </Content>
     <Content Include="Models\TeacherModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -298,13 +222,11 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
     <EntityDeploy Include="Models\CollegeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CollegeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CollegeModel.edmx.diagram">
-      <DependentUpon>CollegeModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\TeacherModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TeacherModel.Designer.cs</LastGenOutput>
@@ -312,28 +234,6 @@
     <Content Include="Models\TeacherModel.edmx.diagram">
       <DependentUpon>TeacherModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\StudentsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StudentsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\StudentsModel.edmx.diagram">
-      <DependentUpon>StudentsModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\SubjectsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SubjectsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\SubjectsModel.edmx.diagram">
-      <DependentUpon>SubjectsModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\StudentsSubjectsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StudentsSubjectsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\StudentsSubjectsModel.edmx.diagram">
-      <DependentUpon>StudentsSubjectsModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -359,8 +259,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Colleges\Create.cshtml" />
+    <Content Include="Views\Colleges\Delete.cshtml" />
+    <Content Include="Views\Colleges\Details.cshtml" />
+    <Content Include="Views\Colleges\Edit.cshtml" />
+    <Content Include="Views\Colleges\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\College\" />
+    <Folder Include="Views\Teachers\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

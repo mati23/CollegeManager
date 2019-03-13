@@ -13,10 +13,10 @@ namespace CollegeManager.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class college_databaseEntities : DbContext
+    public partial class CollegeEntities : DbContext
     {
-        public college_databaseEntities()
-            : base("name=college_databaseEntities")
+        public CollegeEntities()
+            : base("name=CollegeEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace CollegeManager.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<College> Colleges { get; set; }
+        public virtual DbSet<College> College { get; set; }
     }
 }

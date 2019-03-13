@@ -22,7 +22,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="college_databaseModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Teachers">
+        <EntityType Name="Teacher">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -31,17 +31,17 @@
           <Property Name="Birthday" Type="DateTime" Precision="0" />
           <Property Name="Salary" Type="Decimal" Precision="6" Scale="2" />
         </EntityType>
-        <EntityContainer Name="college_databaseEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Teachers" EntityType="Self.Teachers" />
+        <EntityContainer Name="TeacherEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Teachers" EntityType="Self.Teacher" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="college_databaseModel1StoreContainer" CdmEntityContainer="college_databaseEntities2">
+        <EntityContainerMapping StorageEntityContainer="college_databaseModel1StoreContainer" CdmEntityContainer="TeacherEntities">
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="college_databaseModel1.Teachers">
+            <EntityTypeMapping TypeName="college_databaseModel1.Teacher">
               <MappingFragment StoreEntitySet="Teachers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -64,7 +64,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

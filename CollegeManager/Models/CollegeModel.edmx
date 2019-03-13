@@ -27,16 +27,16 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="college_databaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Colleges" EntityType="Self.College" />
+        <EntityContainer Name="CollegeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="College" EntityType="Self.College" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="college_databaseModelStoreContainer" CdmEntityContainer="college_databaseEntities">
-          <EntitySetMapping Name="Colleges">
+        <EntityContainerMapping StorageEntityContainer="college_databaseModelStoreContainer" CdmEntityContainer="CollegeEntities">
+          <EntitySetMapping Name="College">
             <EntityTypeMapping TypeName="college_databaseModel.College">
               <MappingFragment StoreEntitySet="College">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -58,7 +58,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
