@@ -180,7 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularJsApp\Teacher\Controller.js" />
-    <Content Include="AngularJsApp\Teacher\Model.js" />
+    <Content Include="AngularJsApp\Teacher\Module.js" />
     <Content Include="AngularJsApp\Teacher\Service.js" />
     <Content Include="App_Data\college_database.mdf" />
     <Content Include="App_Data\college_database_log.ldf">
