@@ -1,0 +1,41 @@
+﻿<div class="container" ng-controller="studentCtrl" ng-app="students">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			List of Students
+		</div>
+		<table class="table table-bordered">
+			<thread style="background-color=blue;">
+				<tr>
+					<th> student </th>
+					<th> Name </th>
+					<th> Birthday</th>
+					<th> Registration Number</th>
+
+				</tr>
+			</thread>
+
+			<tbody>
+				<tr ng-repeat="student in Students">
+					<td>{{student.Id}}</td>
+					<td>{{student.Name}}</td>
+					<td>{{student.Birthday}}</td>
+					<td>{{student.RegistrationNumber}}</td>
+
+
+					<td style="width: 200px">
+						<a href="#" class="btn btn-info">Update</a>
+						<a href="#" class="btn btn-danger">Delete</a>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
+@section scripts{
+	<script src="~/AngularJsApp/Student/Module.js"></script>
+	<script src="~/AngularJsApp/Student/Service.js"></script>
+	<script src="~/AngularJsApp/Student/Controller.js"></script>
+}

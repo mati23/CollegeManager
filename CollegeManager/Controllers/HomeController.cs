@@ -20,7 +20,7 @@ namespace CollegeManager.Controllers
 			return View();
 		}
 
-		public ActionResult Contact()
+		public ActionResult Students()
 		{
 			ViewBag.Message = "Your contact page.";
 

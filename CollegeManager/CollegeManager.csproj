@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CollegesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +159,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CollegeModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Teacher.cs">
       <DependentUpon>TeacherModel.tt</DependentUpon>
     </Compile>
@@ -179,6 +198,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJsApp\Student\Controller.js" />
+    <Content Include="AngularJsApp\Student\Module.js" />
+    <Content Include="AngularJsApp\Student\Service.js" />
     <Content Include="AngularJsApp\Teacher\Controller.js" />
     <Content Include="AngularJsApp\Teacher\Module.js" />
     <Content Include="AngularJsApp\Teacher\Service.js" />
@@ -207,6 +229,16 @@
       <LastGenOutput>CollegeModel.cs</LastGenOutput>
       <DependentUpon>CollegeModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\StudentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentModel.edmx</DependentUpon>
+      <LastGenOutput>StudentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentModel.edmx</DependentUpon>
+      <LastGenOutput>StudentModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\TeacherModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TeacherModel.edmx</DependentUpon>
@@ -234,6 +266,13 @@
     <Content Include="Models\TeacherModel.edmx.diagram">
       <DependentUpon>TeacherModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\StudentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentModel.edmx.diagram">
+      <DependentUpon>StudentModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -257,7 +296,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Students.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Colleges\Create.cshtml" />
     <Content Include="Views\Colleges\Delete.cshtml" />
@@ -267,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\College\" />
+    <Folder Include="Views\Students\" />
     <Folder Include="Views\Teachers\" />
   </ItemGroup>
   <ItemGroup>
