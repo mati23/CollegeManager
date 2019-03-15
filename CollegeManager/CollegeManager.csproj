@@ -305,7 +305,6 @@
     <Content Include="Views\Colleges\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SQL\" />
     <Folder Include="Views\College\" />
     <Folder Include="Views\Students\" />
     <Folder Include="Views\Teachers\" />
