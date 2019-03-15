@@ -1,5 +1,12 @@
 ﻿<div class="container" ng-controller="teacherCtrl" ng-app="teachers">
 	<div class="panel panel-info">
+
+		<div class="panel-body">
+			<button type="button" class="btn btn-info" data-target="#AddNewTeacher" data-toggle="modal">
+				<span> Add New</span>
+			</button>
+		</div>
+
 		<div class="panel-heading">
 			List of Teachers
 		</div>
@@ -29,6 +36,37 @@
 			</tbody>
 		</table>
 
+	</div>
+
+	<div class="modal" id="AddNewTeacher" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="text-info">Add a New Teacher</h3>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" name="AddNewTeacherForm">
+						<div class="form-group">
+							<input class="form-control" readonly="readonly" name="teacherId" type="hidden" placeholder="Teacher Id" />
+						</div>
+
+						<div class="form-group">
+							<input class="form-control" type="text" name="name" ng-model="Name" placeholder="Teacher's name" />
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" name="birthday" ng-model="Birthday" placeholder="Birthday" />
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" name="salary" ng-model="Salary" placeholder="Salary" />
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="btnSave" data-dismiss="modal" ng-click="addTeacher()">Add</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clearData()">Cancel</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
