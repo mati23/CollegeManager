@@ -23,23 +23,5 @@ namespace CollegeManager.Controllers
 				return Json(listTeachers, JsonRequestBehavior.AllowGet);
 			}		
 		}
-
-
-		//POST Teacher/AddNewTeacher
-		[HttpPost]
-		public JsonResult AddNewTeacher(Teacher teacher)
-		{
-			if(teacher != null)
-			{
-				using (var database = new TeacherEntities())
-				{
-					database.Teachers.Add(teacher);
-					database.SaveChanges();
-
-					return Json(new { success = true });
-				}
-			}
-			return Json(new { success = false });
-		}
     }
 }

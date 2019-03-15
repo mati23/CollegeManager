@@ -7,5 +7,5 @@
 var teacherApp;
 
 (function () {
-	teacherApp = angular.module('teachers',[]);
+	teacherApp = angular.module('teachers', []);
 })();
